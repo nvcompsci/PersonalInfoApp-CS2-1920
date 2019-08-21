@@ -6,6 +6,12 @@
             color: aqua;
         }
     </style>
+    
+</head>
+<body>
+    <h1>Personal Info App</h1>
+    <h3>My Summer</h3>
+    <p>This summer was really fun! We traveled with family.</p>
     <script>
         //let name = "John Word"
         //let age = 29
@@ -20,11 +26,24 @@
             favArtists: ["Los Cafres","O.A.R.","Bob Marley"],
             favVideoGame: "Super Mario 64"
         }
+        console.log(person)
+        console.log(person.age)
+        
+        /*let elem = document.createElement('h3')
+        elem.innerHTML = person.firstName
+        document.body.appendChild(elem)*/
+        
+        let elem = document.createElement('div')
+        elem.innerHTML = `<h3>Name</h3>
+${person.firstName} ${person.lastName}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.innerHTML = `<h3>Age</h3>
+        ${person.age}
+Next year I will be ${person.age + 1}`
+        document.body.appendChild(elem)
+        
     </script>
-</head>
-<body>
-    <h1>Personal Info App</h1>
-    <h3>My Summer</h3>
-    <p>This summer was really fun! We traveled with family.</p>
 </body>
 </html>
