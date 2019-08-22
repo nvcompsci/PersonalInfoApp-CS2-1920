@@ -10,14 +10,21 @@
             width: 50%;
             margin: 10px auto;
             padding: 10px;
+        }
+        
+        div.longText {
             border: 5px solid white;
+        }
+        
+        div.shortText {
+            background-color: red;
         }
     </style>
     
 </head>
 <body>
     <h1>Personal Info App</h1>
-    <div>
+    <div class="longText">
     <h3>My Summer</h3>
     <p>This summer was really fun! We traveled with family.</p>
     <img src="los_cafres.jpg" width=300>
@@ -44,11 +51,13 @@
         document.body.appendChild(elem)*/
         
         let elem = document.createElement('div')
+        elem.classList.add('shortText')
         elem.innerHTML = `<h3>Name</h3>
 ${person.firstName} ${person.lastName}`
         document.body.appendChild(elem)
         
         elem = document.createElement('div')
+        elem.classList.add('shortText')
         elem.innerHTML = `<h3>Age</h3>
         ${person.age}
 Next year I will be ${person.age + 1}`
