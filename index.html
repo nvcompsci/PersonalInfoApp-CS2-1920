@@ -19,6 +19,10 @@
         div.shortText {
             background-color: red;
         }
+        
+        div.clicked {
+            background-color: white !important;
+        }
     </style>
     
 </head>
@@ -27,7 +31,7 @@
     <div class="longText">
     <h3>My Summer</h3>
     <p>This summer was really fun! We traveled with family.</p>
-    <img src="los_cafres.jpg" width=300>
+    <img src="los_cafres.jpg" width=300 id="img1">
     </div>
     <script>
         //let name = "John Word"
@@ -63,6 +67,40 @@ ${person.firstName} ${person.lastName}`
 Next year I will be ${person.age + 1}`
         document.body.appendChild(elem)
         
+        //Get a reference to elements on the page
+        let divs = document.querySelectorAll('div');
+        for (let i = 0; i < divs.length; i++) {
+            let div = divs[i];
+            div.addEventListener('click',handleClick);
+        }
+        
+        function handleClick(event) {
+            //event.target.style.backgroundColor = "white";
+            event.target.classList.toggle('clicked');
+        }
+        
+        document.querySelector('#img1').addEventListener('click',handleImgClick)
+        
+        function handleImgClick(event) {
+            if (event.target.width == 300)
+                event.target.width = 100
+            else
+                event.target.width = 300
+        }
     </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </body>
 </html>
